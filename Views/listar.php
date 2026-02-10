@@ -122,6 +122,14 @@ function aRomano(int $n): string
         <?php endforeach; ?>
 
     </table>
+<div class="github-wrap">
+  <a class="github-btn"
+     href="https://github.com/Macedux/AP-CRUD-PROGRAMACION-2026-ADRIAN-MACEDA"
+     target="_blank" rel="noopener">
+    🏛️ GitHub del proyecto
+    
+  </a>
+</div>
 </body>
 
 </html>

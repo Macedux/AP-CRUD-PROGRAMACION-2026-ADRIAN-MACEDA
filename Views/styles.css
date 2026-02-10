@@ -174,3 +174,32 @@ tr:nth-child(even) td{
   font-family:"Cinzel", serif;
   font-size:.85rem;
 }
+.github-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:6px 12px;          /* ⬅️ más pequeño */
+  border-radius:10px;        /* ⬅️ menos “bloque” */
+
+  font-family:"Cinzel", serif;
+  font-size:.9rem;           /* ⬅️ CLAVE */
+  letter-spacing:.2px;
+
+  color: var(--ink);
+  text-decoration:none;
+  border: 1px solid rgba(176,138,44,.45);
+
+  background:
+    linear-gradient(180deg, rgba(247,231,178,.9), rgba(215,182,90,.85));
+
+  box-shadow: 0 6px 14px rgba(0,0,0,.14);
+}
+.github-icon{
+  width:14px;   /* ⬅️ antes 18 */
+  height:14px;
+}
+.github-btn .badge{
+  font-size:.7rem;
+  padding:2px 7px;
+}
