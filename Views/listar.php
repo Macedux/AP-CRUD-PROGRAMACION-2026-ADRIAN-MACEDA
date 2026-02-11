@@ -57,10 +57,10 @@ function aRomano(int $n): string
             <th>Unidades</th>
             <th>Acciones</th>
         </tr>
-        <?php foreach ($comitatus as $c): ?>
+        <?php foreach ($comitatensesAcortados as $c): ?>
             <?php if (get_class($c) === "Comitatense"): ?>
                 <tr>
-                    <td><?= aRomano((int)$c->getIdentitas()); ?></td>
+                    <td><?= aRomano((int) $c->getIdentitas()); ?></td>
                     <td> <?= $c->getLegio(); ?></td>
                     <td> <?= $c->getUnidades(); ?></td>
                     <td>
@@ -81,6 +81,11 @@ function aRomano(int $n): string
         <?php endforeach; ?>
 
     </table>
+    <?php for ($i = 1; $i <= $totalPaginaComitatenses; $i++): ?>
+        <a href="index.php?accion=index&pActualComitatenses=<?= $i ?>">
+            <?= $i ?>
+        </a>
+    <?php endfor; ?>
     <h3> LIMITANEI</h3>
     <p>
         Los limitanei eran tropas estacionarias destinadas a la defensa de las fronteras
@@ -96,10 +101,10 @@ function aRomano(int $n): string
             <th>Acciones</th>
         </tr>
 
-        <?php foreach ($comitatus as $c): ?>
+        <?php foreach ( $limitaneiAcortados as $c): ?>
             <?php if (get_class($c) === "Limitanei"): ?>
                 <tr>
-                    <td><?= aRomano((int)$c->getIdentitas()); ?></td>
+                    <td><?= aRomano((int) $c->getIdentitas()); ?></td>
                     <td><?= $c->getFrontera(); ?></td>
                     <td><?= $c->getFortificacion(); ?></td>
                     <td>
@@ -122,14 +127,18 @@ function aRomano(int $n): string
         <?php endforeach; ?>
 
     </table>
-<div class="github-wrap">
-  <a class="github-btn"
-     href="https://github.com/Macedux/AP-CRUD-PROGRAMACION-2026-ADRIAN-MACEDA"
-     target="_blank" rel="noopener">
-    🏛️ GitHub del proyecto
-    
-  </a>
-</div>
+    <?php for ($i = 1; $i <= $totalPaginaLimitanei; $i++): ?>
+        <a href="index.php?accion=index&pActualLimitanei=<?= $i ?>">
+            <?= $i ?>
+        </a>
+    <?php endfor; ?>
+    <div class="github-wrap">
+        <a class="github-btn" href="https://github.com/Macedux/AP-CRUD-PROGRAMACION-2026-ADRIAN-MACEDA" target="_blank"
+            rel="noopener">
+            🏛️ GitHub del proyecto
+
+        </a>
+    </div>
 </body>
 
 </html>
