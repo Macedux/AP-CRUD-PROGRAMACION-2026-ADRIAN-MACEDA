@@ -20,6 +20,28 @@ class GestorTropas
     {
         return $_SESSION['comitatus'];
     }
+      public function listarComitatenses() //enumerar tropas
+    {
+        $comitatenses = [];
+        for($i=0;$i<count($_SESSION['comitatus']);$i++){
+            if(get_class($_SESSION['comitatus'][$i]) == 'Comitatense') {
+                 $comitatenses[] = $_SESSION['comitatus'][$i];
+        }
+        }
+        return $comitatenses;
+        
+    }
+          public function listarLimitanei() //enumerar tropas
+    {
+        $limitanei = [];
+        for($i=0;$i<count($_SESSION['comitatus']);$i++){
+            if(get_class($_SESSION['comitatus'][$i]) == 'Limitanei') {
+                $limitanei[] = $_SESSION['comitatus'][$i];
+        }
+        }
+        return $limitanei;
+        
+    }
     public function buscar($identitas) // buscar
     {
         foreach ($_SESSION['comitatus'] as $soldado) {

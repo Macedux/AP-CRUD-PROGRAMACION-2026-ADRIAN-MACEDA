@@ -12,7 +12,21 @@ class SoldadoController
 
     public function index()
     {
-        $comitatus = $this->gestor->listar();
+        ///calculos para el paginador de comitatus
+        $comitatenses = $this->gestor->listarComitatenses();
+        $totalComitatenses = count($comitatenses);
+        $comitatensesPorPagina = 3;
+        $totalPaginaComitatenses = ceil($totalComitatenses / $comitatensesPorPagina);
+        $paginaActualComitatenses = $_GET["pActualComitatenses"] ?? 1;
+        $comitatensesAcortados = array_slice($comitatenses, ($paginaActualComitatenses - 1) * $comitatensesPorPagina, $comitatensesPorPagina);
+        
+        ///calculos para el paginador de Limitanei
+        $limitanei = $this->gestor->listarLimitanei();
+        $totalLimitanei = count($limitanei);
+        $limitaneiPorPagina = 3;
+        $totalPaginaLimitanei = ceil($totalLimitanei / $limitaneiPorPagina);
+        $paginaActualLimitanei = $_GET["pActualLimitanei"] ?? 1;
+        $limitaneiAcortados = array_slice($limitanei, ( $paginaActualLimitanei - 1) * $limitaneiPorPagina, $limitaneiPorPagina);
         include "views/listar.php";
     }
 
